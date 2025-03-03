@@ -1,0 +1,105 @@
+feature {
+  name: "%Blue pixel"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "%Green pixel"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "%Red Pixel"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Anaemic"
+  type: BYTES
+  domain: "Anaemic"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Hb"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Number"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Sex"
+  type: BYTES
+  domain: "Sex"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+string_domain {
+  name: "Anaemic"
+  value: "No"
+  value: "Yes"
+}
+string_domain {
+  name: "Sex"
+  value: "F"
+  value: "F "
+  value: "M"
+  value: "M "
+}

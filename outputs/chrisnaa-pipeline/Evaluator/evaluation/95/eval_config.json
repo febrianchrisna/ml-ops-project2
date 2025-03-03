@@ -1,0 +1,71 @@
+{
+  "evalConfig": {
+    "modelSpecs": [
+      {
+        "name": "candidate",
+        "labelKey": "Anaemic_xf",
+        "predictionKey": "outputs"
+      },
+      {
+        "name": "baseline",
+        "labelKey": "Anaemic_xf",
+        "predictionKey": "outputs",
+        "isBaseline": true
+      }
+    ],
+    "slicingSpecs": [
+      {},
+      {
+        "featureKeys": [
+          "Sex"
+        ]
+      },
+      {
+        "featureKeys": [
+          "Hb"
+        ]
+      }
+    ],
+    "metricsSpecs": [
+      {
+        "metrics": [
+          {
+            "className": "AUC"
+          },
+          {
+            "className": "Precision"
+          },
+          {
+            "className": "Recall"
+          },
+          {
+            "className": "ExampleCount"
+          },
+          {
+            "className": "BinaryAccuracy",
+            "threshold": {
+              "valueThreshold": {
+                "lowerBound": 0.5
+              },
+              "changeThreshold": {
+                "absolute": 0.0001,
+                "direction": "HIGHER_IS_BETTER"
+              }
+            }
+          }
+        ],
+        "modelNames": [
+          "candidate",
+          "baseline"
+        ]
+      }
+    ]
+  },
+  "version": "0.42.0",
+  "dataLocation": "<user provided PCollection>",
+  "fileFormat": "<unknown>",
+  "modelLocations": {
+    "baseline": "D:\\6. Kumpulan Tugas\\Submission 2\\outputs\\chrisnaa-pipeline\\Trainer\\model\\77\\Format-Serving",
+    "candidate": "outputs\\chrisnaa-pipeline\\Trainer\\model\\94\\Format-Serving"
+  }
+}
