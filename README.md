@@ -1,17 +1,17 @@
-# Submission 1: Nama Proyek Anda
-Nama:
+# Submission 2: Anemia Prediction Pipeline
+Nama: Febrian Chrisna Ardianto
 
-Username dicoding:
+Username dicoding: chrisnaa
 
 | | Deskripsi |
 | ----------- | ----------- |
-| Dataset | [nama dataset](https://www.kaggle.com/) |
-| Masalah | Deskripsi masalah yang di angkat |
-| Solusi machine learning | Deskripsi solusi machine learning yang akan dibuat |
-| Metode pengolahan | Deskripsi metode pengolahan data yang digunakan |
-| Arsitektur model | Deskripsi arsitektur model yang diguanakan |
-| Metrik evaluasi | Deksripsi metrik yang digunakan untuk mengevaluasi performa model |
-| Performa model | Deksripsi performa model yang dibuat |
-| Opsi deployment | Deksripsi tentang opsi deployment |
-| Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [nama-model](https://model-resiko-kredit.herokuapp.com/v1/models/model-resiko-kredit/metadata)|
-| Monitoring | Deksripsi terkait hasil monitoring dari model serving |
+| Dataset | [Anemia Prediction](https://www.kaggle.com/datasets/humairmunir/anaemia-prediction) |
+| Masalah | Anemia adalah masalah kesehatan yang sangat umum, terutama di negara berkembang. Data dari WHO menunjukkan bahwa lebih dari 2 billion orang di seluruh dunia mengalami anemia. Mendeteksi anemia pada tahap dini sangat penting untuk mencegah komplikasi lebih lanjut. Masalah yang diangkat dalam penelitian ini adalah bagaimana mengidentifikasi gejala anemia berdasarkan data numerik dan citra (pixel RGB) menggunakan machine learning, yang dapat membantu dalam diagnosa cepat tanpa pemeriksaan medis langsung.|
+| Solusi machine learning | Solusi machine learning yang digunakan adalah mengembangkan model klasifikasi untuk mendeteksi apakah seseorang menderita anemia berdasarkan data input seperti kadar hemoglobin (Hb) dan nilai warna pixel citra yang mencerminkan kondisi fisik tubuh. Model ini mengklasifikasikan individu berdasarkan parameter yang tersedia untuk memberikan hasil yang cepat dan akurat.|
+| Metode pengolahan | Preprocessing Data: Data dibersihkan dan diproses untuk memastikan format yang sesuai. Kolom Sex yang bersifat kategorikal diubah menjadi one-hot encoding, sedangkan fitur numerik seperti Red pixel, Green pixel, Blue pixel, dan Hb dinormalisasi ke rentang [0, 1]. Tipe Data: Fitur Sex berjenis string, sedangkan fitur lainnya seperti pixel dan Hb berjenis numerik (float). Splitting Data: Data dibagi menjadi dua subset utama, yaitu 80% untuk training dan 20% untuk evaluasi, menggunakan metode train-test split untuk memastikan bahwa model dilatih dengan data yang beragam dan diuji dengan data yang belum pernah dilihat sebelumnya.|
+| Arsitektur model | Model yang digunakan adalah model Keras dengan beberapa lapisan Dense dan fungsi aktivasi ReLU. Model ini dilengkapi dengan teknik Dropout untuk menghindari overfitting. Output dari model ini adalah probabilitas anemia (dengan fungsi aktivasi sigmoid untuk klasifikasi biner). Model dilatih menggunakan Binary Cross-Entropy dan Binary Accuracy sebagai metrik evaluasi.|
+| Metrik evaluasi | Metrik yang digunakan untuk mengevaluasi performa model adalah Binary Accuracy, Precision, Recall, AUC, dan ExampleCount. Metrik-metrik ini digunakan untuk menilai seberapa baik model dalam memprediksi kelas anemia dan non-anemia, serta memberikan gambaran yang lebih menyeluruh tentang kualitas model.|
+| Performa model | Model yang dibangun mencapai binary_accuracy: 0.9979593753814697, yang menunjukkan performa yang sangat baik dalam mengklasifikasikan data menjadi Anemia atau Non-Anemia dengan akurasi yang sangat tinggi, bahkan pada dataset yang seimbang.|
+| Opsi deployment | Model di-deploy menggunakan TensorFlow Serving pada platform Railway, yang menyediakan endpoint untuk melakukan prediksi melalui API HTTP. Model dapat diakses melalui URL publik.|
+| Web app | [Anemia-Model](https://anemia-detection.up.railway.app/v1/models/anemia-model/metadata)|
+| Monitoring | Untuk memantau kinerja model yang telah dideploy di Railway, Prometheus digunakan untuk mengumpulkan dan menyimpan metrik yang dihasilkan oleh model. Prometheus adalah sistem pemantauan sumber terbuka yang mengumpulkan data metrik dari berbagai aplikasi dan server. Dalam konteks ini, Prometheus memungkinkan kita untuk memonitor performa model yang dideploy secara real-time dengan cara yang lebih efisien.|
